@@ -2013,6 +2013,7 @@ dependencies = [
  "sp-runtime",
  "sp-std",
  "sp-trie",
+ "xcm",
 ]
 
 [[package]]

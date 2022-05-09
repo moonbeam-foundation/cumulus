@@ -18,6 +18,8 @@ sp-trie = { git = "https://github.com/purestake/substrate", default-features = f
 polkadot-core-primitives = { git = "https://github.com/purestake/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.19-gorka-xcm-v3" }
 polkadot-parachain = { git = "https://github.com/purestake/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.19-gorka-xcm-v3" }
 polkadot-primitives = { git = "https://github.com/purestake/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.19-gorka-xcm-v3" }
+xcm = { git = "https://github.com/paritytech/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.19-gorka-xcm-v3" }
+
 
 [features]
 default = [ "std" ]
