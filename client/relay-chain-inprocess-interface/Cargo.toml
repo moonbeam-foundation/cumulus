@@ -26,8 +26,8 @@ sp-runtime = { git = "https://github.com/paritytech/substrate", branch = "polkad
 sp-state-machine = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
 
 # Polkadot
-polkadot-client = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20" }
-polkadot-service = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20" }
+polkadot-client = { git = "https://github.com/purestake/polkadot", branch = "girazoki-xcm-call-polkadot-changes" }
+polkadot-service = { git = "https://github.com/purestake/polkadot", branch = "girazoki-xcm-call-polkadot-changes" }
 
 # Cumulus
 cumulus-primitives-core = { path = "../../primitives/core" }
@@ -39,8 +39,8 @@ cumulus-relay-chain-interface = { path = "../relay-chain-interface" }
 sp-keyring = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
 
 # Polkadot
-polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20" }
-polkadot-test-client = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20" }
+polkadot-primitives = { git = "https://github.com/purestake/polkadot", branch = "girazoki-xcm-call-polkadot-changes" }
+polkadot-test-client = { git = "https://github.com/purestake/polkadot", branch = "girazoki-xcm-call-polkadot-changes" }
 
 # Cumulus
 cumulus-test-service = { path = "../../test/service" }

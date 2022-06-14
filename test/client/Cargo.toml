@@ -27,8 +27,8 @@ pallet-transaction-payment = { git = "https://github.com/paritytech/substrate", 
 pallet-balances = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.20" }
 
 # Polkadot
-polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20" }
-polkadot-parachain = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.20" }
+polkadot-primitives = { git = "https://github.com/purestake/polkadot", branch = "girazoki-xcm-call-polkadot-changes" }
+polkadot-parachain = { git = "https://github.com/purestake/polkadot", branch = "girazoki-xcm-call-polkadot-changes" }
 
 # Cumulus
 cumulus-test-runtime = { path = "../runtime" }
