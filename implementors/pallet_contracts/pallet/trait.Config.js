@@ -1,3 +1,3 @@
 (function() {var implementors = {};
-implementors["canvas_kusama_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"canvas_kusama_runtime/struct.Runtime.html\" title=\"struct canvas_kusama_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["canvas_kusama_runtime::Runtime"]}];
+implementors["contracts_rococo_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"contracts_rococo_runtime/struct.Runtime.html\" title=\"struct contracts_rococo_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["contracts_rococo_runtime::Runtime"]}];
 if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

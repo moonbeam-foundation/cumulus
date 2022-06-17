@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["canvas_kusama_runtime"] = [{"text":"impl <a class=\"trait\" href=\"canvas_kusama_runtime/trait.BuildStorage.html\" title=\"trait canvas_kusama_runtime::BuildStorage\">BuildStorage</a> for <a class=\"struct\" href=\"canvas_kusama_runtime/struct.GenesisConfig.html\" title=\"struct canvas_kusama_runtime::GenesisConfig\">GenesisConfig</a>","synthetic":false,"types":["canvas_kusama_runtime::GenesisConfig"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

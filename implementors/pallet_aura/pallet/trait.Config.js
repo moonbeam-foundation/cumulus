@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors["canvas_kusama_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"canvas_kusama_runtime/struct.Runtime.html\" title=\"struct canvas_kusama_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["canvas_kusama_runtime::Runtime"]}];
+implementors["contracts_rococo_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"contracts_rococo_runtime/struct.Runtime.html\" title=\"struct contracts_rococo_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["contracts_rococo_runtime::Runtime"]}];
 implementors["parachain_template_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"parachain_template_runtime/struct.Runtime.html\" title=\"struct parachain_template_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["parachain_template_runtime::Runtime"]}];
 implementors["rococo_parachain_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"rococo_parachain_runtime/struct.Runtime.html\" title=\"struct rococo_parachain_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["rococo_parachain_runtime::Runtime"]}];
 implementors["statemine_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"statemine_runtime/struct.Runtime.html\" title=\"struct statemine_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["statemine_runtime::Runtime"]}];
