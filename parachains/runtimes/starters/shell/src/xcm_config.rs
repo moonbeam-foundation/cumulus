@@ -66,6 +66,7 @@ impl xcm_executor::Config for XcmConfig {
 	type AssetTrap = (); // don't trap for now
 	type AssetClaims = (); // don't claim for now
 	type SubscriptionService = (); // don't handle subscriptions for now
+	type CallDispatcher = Call;
 }
 
 impl cumulus_pallet_xcm::Config for Runtime {

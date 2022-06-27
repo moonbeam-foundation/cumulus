@@ -151,6 +151,7 @@ impl xcm_executor::Config for XcmConfig {
 	type AssetTrap = ();
 	type AssetClaims = ();
 	type SubscriptionService = ();
+	type CallDispatcher = Call;
 }
 
 pub type XcmRouter = (

@@ -169,6 +169,7 @@ impl xcm_executor::Config for XcmConfig {
 	type AssetTrap = PolkadotXcm;
 	type AssetClaims = PolkadotXcm;
 	type SubscriptionService = PolkadotXcm;
+	type CallDispatcher = Call;
 }
 
 /// Local origins on this chain are allowed to dispatch XCM sends/executions.
