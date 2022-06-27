@@ -68,11 +68,11 @@ pallet-transaction-payment-rpc = { git = "https://github.com/paritytech/substrat
 pallet-contracts-rpc = { git = "https://github.com/paritytech/substrate", branch = "polkadot-v0.9.23" }
 
 # Polkadot
-polkadot-cli = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.23" }
-polkadot-parachain = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.23" }
-polkadot-primitives = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.23" }
-polkadot-service = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.23" }
-xcm = { git = "https://github.com/paritytech/polkadot", branch = "release-v0.9.23" }
+polkadot-cli = { git = "https://github.com/purestake/polkadot", branch = "moonbeam-polkadot-v0.9.23" }
+polkadot-parachain = { git = "https://github.com/purestake/polkadot", branch = "moonbeam-polkadot-v0.9.23" }
+polkadot-primitives = { git = "https://github.com/purestake/polkadot", branch = "moonbeam-polkadot-v0.9.23" }
+polkadot-service = { git = "https://github.com/purestake/polkadot", branch = "moonbeam-polkadot-v0.9.23" }
+xcm = { git = "https://github.com/purestake/polkadot", branch = "moonbeam-polkadot-v0.9.23" }
 
 # Cumulus
 cumulus-client-cli = { path = "../client/cli" }
