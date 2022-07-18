@@ -1053,6 +1053,7 @@ impl<T: Config> BlockNumberProvider for RelaychainBlockNumberProvider<T> {
 	#[cfg(feature = "runtime-benchmarks")]
 	fn set_block_number(block: Self::BlockNumber) {
 		let mut validation_data = Pallet::<T>::validation_data().unwrap_or_else(||
+			panic!("I am hitting here");
 			// PersistedValidationData does not impl default in non-std
 			PersistedValidationData {
 				parent_head: vec![].into(),
