@@ -19,7 +19,9 @@ use sc_service::{
 };
 use sp_core::hexdisplay::HexDisplay;
 use sp_runtime::traits::{AccountIdConversion, Block as BlockT};
-use std::{io::Write, net::SocketAddr};
+use std::{io::Write, net::SocketAddr, sync::Arc};
+
+use crate::command_helper::BenchmarkExtrinsicBuilder;
 
 fn load_spec(id: &str) -> std::result::Result<Box<dyn sc_service::ChainSpec>, String> {
 	Ok(match id {
@@ -260,7 +262,22 @@ pub fn run() -> Result<()> {
 
 					cmd.run(config, partials.client.clone(), db, storage)
 				}),
-				BenchmarkCmd::Overhead(_) => Err("Unsupported benchmarking command".into()),
+				BenchmarkCmd::Overhead(cmd) => {
+					return runner.sync_run(|mut config| {
+						let partials = new_partial::<RuntimeApi, TemplateRuntimeExecutor, _>(
+							&config,
+							crate::service::parachain_build_import_queue,
+						)?;
+
+						let ext_builder = BenchmarkExtrinsicBuilder::new(partials.client);
+						cmd.run(
+							config,
+							partials.client.clone(),
+							crate::command_helper::inherent_benchmark_data()?,
+							Arc::new(ext_builder),
+						)
+					});
+				}
 				BenchmarkCmd::Machine(cmd) =>
 					runner.sync_run(|config| cmd.run(&config, SUBSTRATE_REFERENCE_HARDWARE.clone())),
 			}
