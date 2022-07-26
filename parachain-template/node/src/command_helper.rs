@@ -28,12 +28,15 @@ use sc_cli::Result;
 use sc_client_api::BlockBackend;
 use sp_core::{sr25519, Pair};
 use sp_inherents::{InherentData, InherentDataProvider};
-use sp_runtime::{generic::Era, AccountId32, OpaqueExtrinsic, SaturatedConversion};
+use sp_runtime::{generic::{Block, Era}, AccountId32, OpaqueExtrinsic, SaturatedConversion};
 use sp_keyring::Sr25519Keyring;
 use sc_executor::NativeElseWasmExecutor;
 
-type FullClient = 
-    sc_service::TFullClient<runtime::Block, runtime::RuntimeApi, NativeElseWasmExecutor<crate::service::TemplateRuntimeExecutor>>;
+pub type FullClient = sc_service::TFullClient<
+    Block<runtime::Header, sp_runtime::OpaqueExtrinsic>,
+    runtime::RuntimeApi,
+    NativeElseWasmExecutor<crate::service::TemplateRuntimeExecutor>
+>;
 
 pub type SignedPayload = sp_runtime::generic::SignedPayload<runtime::Call, runtime::SignedExtra>;
 

@@ -263,13 +263,13 @@ pub fn run() -> Result<()> {
 					cmd.run(config, partials.client.clone(), db, storage)
 				}),
 				BenchmarkCmd::Overhead(cmd) => {
-					return runner.sync_run(|mut config| {
+					return runner.sync_run(|config| {
 						let partials = new_partial::<RuntimeApi, TemplateRuntimeExecutor, _>(
 							&config,
 							crate::service::parachain_build_import_queue,
 						)?;
 
-						let ext_builder = BenchmarkExtrinsicBuilder::new(partials.client);
+						let ext_builder = BenchmarkExtrinsicBuilder::new(partials.client.clone());
 						cmd.run(
 							config,
 							partials.client.clone(),
@@ -277,7 +277,7 @@ pub fn run() -> Result<()> {
 							Arc::new(ext_builder),
 						)
 					});
-				}
+				},
 				BenchmarkCmd::Machine(cmd) =>
 					runner.sync_run(|config| cmd.run(&config, SUBSTRATE_REFERENCE_HARDWARE.clone())),
 			}
