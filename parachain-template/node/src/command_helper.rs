@@ -31,6 +31,7 @@ use sp_inherents::{InherentData, InherentDataProvider};
 use sp_runtime::{generic::{Block, Era}, AccountId32, OpaqueExtrinsic, SaturatedConversion};
 use sp_keyring::Sr25519Keyring;
 use sc_executor::NativeElseWasmExecutor;
+use cumulus_primitives_parachain_inherent::{ParachainInherentData, INHERENT_IDENTIFIER};
 
 pub type FullClient = sc_service::TFullClient<
     Block<runtime::Header, sp_runtime::OpaqueExtrinsic>,
@@ -129,6 +130,40 @@ pub fn create_benchmark_extrinsic(
 ///
 /// Note: Should only be used for benchmarking.
 pub fn inherent_benchmark_data() -> Result<InherentData> {
+
+    use cumulus_test_relay_sproof_builder::RelayStateSproofBuilder;
+    use cumulus_primitives_core::PersistedValidationData;
+    use cumulus_primitives_parachain_inherent::ParachainInherentData;
+
+    let sproof_builder = RelayStateSproofBuilder::default();
+    let (relay_parent_storage_root, relay_chain_state) =
+        sproof_builder.into_state_root_and_proof();
+
+    log::warn!("building inherent data...");
+
+    let vfp = PersistedValidationData {
+        relay_parent_number: 1u32,
+        relay_parent_storage_root,
+        ..Default::default()
+    };
+
+    let mut inherent_data = {
+        let mut inherent_data = InherentData::default();
+        let system_inherent_data = ParachainInherentData {
+            validation_data: vfp.clone(),
+            relay_chain_state: relay_chain_state,
+            downward_messages: Default::default(),
+            horizontal_messages: Default::default(),
+        };
+        inherent_data
+            .put_data(
+                cumulus_primitives_parachain_inherent::INHERENT_IDENTIFIER,
+                &system_inherent_data,
+            )
+            .expect("failed to put VFP inherent");
+        inherent_data
+    };
+
 	let mut inherent_data = InherentData::new();
 	let d = Duration::from_millis(0);
 	let timestamp = sp_timestamp::InherentDataProvider::new(d.into());
