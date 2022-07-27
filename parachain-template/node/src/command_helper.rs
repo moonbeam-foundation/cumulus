@@ -31,7 +31,10 @@ use sp_inherents::{InherentData, InherentDataProvider};
 use sp_runtime::{generic::{Block, Era}, AccountId32, OpaqueExtrinsic, SaturatedConversion};
 use sp_keyring::Sr25519Keyring;
 use sc_executor::NativeElseWasmExecutor;
-use cumulus_primitives_parachain_inherent::{ParachainInherentData, INHERENT_IDENTIFIER};
+use cumulus_primitives_parachain_inherent::{
+	MockValidationDataInherentDataProvider, MockXcmConfig,
+	ParachainInherentData, INHERENT_IDENTIFIER,
+};
 
 pub type FullClient = sc_service::TFullClient<
     Block<runtime::Header, sp_runtime::OpaqueExtrinsic>,
@@ -170,6 +173,19 @@ pub fn inherent_benchmark_data() -> Result<InherentData> {
 
 	timestamp
 		.provide_inherent_data(&mut inherent_data)
-		.map_err(|e| format!("creating inherent data: {:?}", e))?;
+		.map_err(|e| format!("creating timestamp inherent data: {:?}", e))?;
+
+	let parachain_provider = MockValidationDataInherentDataProvider {
+		current_para_block: 0,
+		relay_offset: 1000,
+		relay_blocks_per_para_block: 2,
+		xcm_config: Default::default(),
+		raw_downward_messages: Default::default(),
+		raw_horizontal_messages: Default::default(),
+	};
+	parachain_provider
+		.provide_inherent_data(&mut inherent_data)
+		.map_err(|e| format!("creating parachain inherent data: {:?}", e))?;
+
 	Ok(inherent_data)
 }
