@@ -200,18 +200,16 @@ impl<R: Send + Sync + GenerateRandomness<u64>> InherentDataProvider
 		}
 
 		// Epoch is set equal to current para block / blocks per epoch
-		sproof_builder.current_epoch = if self.current_para_block < self.para_blocks_per_relay_epoch
-		{
-			0u64
-		} else if self.para_blocks_per_relay_epoch == 0u32 {
+		sproof_builder.current_epoch = if self.para_blocks_per_relay_epoch == 0 {
 			// do not divide by 0 => set epoch to para block number
 			self.current_para_block.into()
 		} else {
 			(self.current_para_block / self.para_blocks_per_relay_epoch).into()
 		};
 		// Randomness is set by randomness generator
-		sproof_builder.randomness =
-			self.relay_randomness_config.generate_randomness(sproof_builder.current_epoch);
+		sproof_builder.randomness = self
+			.relay_randomness_config
+			.generate_randomness(self.current_para_block.into());
 
 		let (relay_parent_storage_root, proof) = sproof_builder.into_state_root_and_proof();
 
