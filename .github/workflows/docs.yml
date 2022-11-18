@@ -18,7 +18,7 @@ jobs:
         run:  rustup show
 
       - name: Rust cache
-        uses: Swatinem/rust-cache@v1
+        uses: Swatinem/rust-cache@v2
 
       - name: Build rustdocs
         run:  SKIP_WASM_BUILD=1 cargo doc --all --no-deps
