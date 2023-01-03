@@ -36,12 +36,12 @@ use cumulus_primitives_core::{
 };
 use cumulus_primitives_parachain_inherent::{MessageQueueChain, ParachainInherentData};
 use frame_support::{
-	dispatch::{DispatchError, DispatchResult},
+	dispatch::{DispatchError, DispatchResult, Pays, PostDispatchInfo},
 	ensure,
 	inherent::{InherentData, InherentIdentifier, ProvideInherent},
 	storage,
 	traits::Get,
-	weights::{Pays, PostDispatchInfo, Weight},
+	weights::Weight,
 };
 use frame_system::{ensure_none, ensure_root};
 use polkadot_parachain::primitives::RelayChainBlockNumber;
@@ -56,10 +56,16 @@ use sp_std::{cmp, collections::btree_map::BTreeMap, prelude::*};
 
 mod migration;
 mod relay_state_snapshot;
+pub mod weights;
 #[macro_use]
 pub mod validate_block;
 #[cfg(test)]
 mod tests;
+
+#[cfg(feature = "runtime-benchmarks")]
+mod benchmarking;
+#[cfg(test)]
+mod mock;
 
 /// Register the `validate_block` function that is used by parachains to validate blocks on a
 /// validator.
@@ -136,18 +142,20 @@ impl CheckAssociatedRelayNumber for AnyRelayNumber {
 #[frame_support::pallet]
 pub mod pallet {
 	use super::*;
+	pub use crate::weights::WeightInfo;
 	use frame_support::pallet_prelude::*;
 	use frame_system::pallet_prelude::*;
 
 	#[pallet::pallet]
 	#[pallet::storage_version(migration::STORAGE_VERSION)]
+	#[pallet::generate_store(pub(super) trait Store)]
 	#[pallet::without_storage_info]
 	pub struct Pallet<T>(_);
 
 	#[pallet::config]
 	pub trait Config: frame_system::Config<OnSetCode = ParachainSetCode<Self>> {
 		/// The overarching event type.
-		type Event: From<Event<Self>> + IsType<<Self as frame_system::Config>::Event>;
+		type RuntimeEvent: From<Event<Self>> + IsType<<Self as frame_system::Config>::RuntimeEvent>;
 
 		/// Something which can be notified when the validation data is set.
 		type OnSystemEvent: OnSystemEvent;
@@ -176,6 +184,9 @@ pub mod pallet {
 
 		/// Something that can check the associated relay parent block number.
 		type CheckAssociatedRelayNumber: CheckAssociatedRelayNumber;
+
+		/// The weight information of this pallet.
+		type WeightInfo: WeightInfo;
 	}
 
 	#[pallet::hooks]
@@ -269,7 +280,7 @@ pub mod pallet {
 		}
 
 		fn on_initialize(_n: T::BlockNumber) -> Weight {
-			let mut weight = 0;
+			let mut weight = Weight::zero();
 
 			// To prevent removing `NewValidationCode` that was set by another `on_initialize`
 			// like for example from scheduler, we only kill the storage entry if it was not yet
@@ -334,8 +345,8 @@ pub mod pallet {
 		///
 		/// As a side effect, this function upgrades the current validation function
 		/// if the appropriate time has come.
-		#[pallet::weight((0, DispatchClass::Mandatory))]
-		// TODO: This weight should be corrected.
+		#[pallet::call_index(0)]
+    #[pallet::weight((T::WeightInfo::set_validation_data_no_messages(), DispatchClass::Mandatory))]
 		pub fn set_validation_data(
 			origin: OriginFor<T>,
 			data: ParachainInherentData,
@@ -416,7 +427,7 @@ pub mod pallet {
 			<T::OnSystemEvent as OnSystemEvent>::on_validation_data(&vfp);
 
 			// TODO: This is more than zero, but will need benchmarking to figure out what.
-			let mut total_weight = 0;
+			let mut total_weight = Weight::zero();
 			total_weight += Self::process_inbound_downward_messages(
 				relevant_messaging_state.dmq_mqc_head,
 				downward_messages,
@@ -426,11 +437,11 @@ pub mod pallet {
 				horizontal_messages,
 				vfp.relay_parent_number,
 			);
-
 			Ok(PostDispatchInfo { actual_weight: Some(total_weight), pays_fee: Pays::No })
 		}
 
-		#[pallet::weight((1_000, DispatchClass::Operational))]
+		#[pallet::call_index(1)]
+    #[pallet::weight((T::WeightInfo::sudo_send_upward_message(), DispatchClass::Operational))]
 		pub fn sudo_send_upward_message(
 			origin: OriginFor<T>,
 			message: UpwardMessage,
@@ -440,7 +451,8 @@ pub mod pallet {
 			Ok(())
 		}
 
-		#[pallet::weight((1_000_000, DispatchClass::Operational))]
+		#[pallet::call_index(2)]
+    #[pallet::weight((T::WeightInfo::authorize_upgrade(), DispatchClass::Operational))]
 		pub fn authorize_upgrade(origin: OriginFor<T>, code_hash: T::Hash) -> DispatchResult {
 			ensure_root(origin)?;
 
@@ -450,7 +462,8 @@ pub mod pallet {
 			Ok(())
 		}
 
-		#[pallet::weight(1_000_000)]
+		#[pallet::call_index(3)]
+    #[pallet::weight(T::WeightInfo::enact_authorized_upgrade())]
 		pub fn enact_authorized_upgrade(
 			_: OriginFor<T>,
 			code: Vec<u8>,
@@ -808,7 +821,7 @@ impl<T: Config> Pallet<T> {
 		let dm_count = downward_messages.len() as u32;
 		let mut dmq_head = <LastDmqMqcHead<T>>::get();
 
-		let mut weight_used = 0;
+		let mut weight_used = Weight::zero();
 		if dm_count != 0 {
 			Self::deposit_event(Event::DownwardMessagesReceived { count: dm_count });
 			let max_weight =
@@ -898,7 +911,7 @@ impl<T: Config> Pallet<T> {
 
 				running_mqc_heads
 					.entry(sender)
-					.or_insert_with(|| last_mqc_heads.get(&sender).cloned().unwrap_or_default())
+					.or_insert_with(|| last_mqc_heads.get(sender).cloned().unwrap_or_default())
 					.extend_hrmp(horizontal_message);
 			}
 		}
