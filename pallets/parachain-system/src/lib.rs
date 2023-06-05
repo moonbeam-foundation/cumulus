@@ -352,7 +352,9 @@ pub mod pallet {
 		/// As a side effect, this function upgrades the current validation function
 		/// if the appropriate time has come.
 		#[pallet::call_index(0)]
-		#[pallet::weight((0, DispatchClass::Mandatory))]
+		// MOONBEAM TODO: custom weight hint to account for validation data size is the PoV
+		// until https://github.com/paritytech/substrate/issues/13810 it's properly fix.
+		#[pallet::weight((Weight::from_parts(0, data.encoded_size() as u64), DispatchClass::Mandatory))]
 		// TODO: This weight should be corrected.
 		pub fn set_validation_data(
 			origin: OriginFor<T>,
