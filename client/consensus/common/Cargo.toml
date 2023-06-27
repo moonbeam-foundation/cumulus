@@ -6,7 +6,7 @@ authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 
 [dependencies]
-futures = { version = "0.3.8", features = ["compat"] }
+futures = { version = "0.3.28", features = ["compat"] }
 codec = { package = "parity-scale-codec", version = "3.0.0", features = [ "derive" ] }
 tracing = "0.1.34"
 async-trait = "0.1.56"
