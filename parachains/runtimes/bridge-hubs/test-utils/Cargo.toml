@@ -10,17 +10,17 @@ codec = { package = "parity-scale-codec", version = "3.0.0", default-features = 
 log = { version = "0.4.17", default-features = false }
 
 # Substrate
-frame-benchmarking = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, optional = true , branch = "moonbeam-polkadot-v0.9.43" }
-frame-executive = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-core = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-io = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-keyring = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
-sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-balances = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-utility = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-session = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+frame-benchmarking = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, optional = true , branch = "grw/moon-1119-add-identity-specs" }
+frame-executive = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-core = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-io = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-keyring = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
+sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-balances = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-utility = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-session = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 asset-test-utils = { path = "../../assets/test-utils"}

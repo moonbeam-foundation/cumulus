@@ -10,11 +10,11 @@ codec = { package = "parity-scale-codec", version = "3.0.0", default-features = 
 scale-info = { version = "2.7.0", default-features = false, features = ["derive"] }
 
 # Substrate
-frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-sudo = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-sudo = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
 polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }

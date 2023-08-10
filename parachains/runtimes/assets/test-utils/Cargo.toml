@@ -9,16 +9,16 @@ description = "Statemint parachain runtime"
 codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = ["derive", "max-encoded-len"] }
 
 # Substrate
-frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-assets = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-balances = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-session = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-consensus-aura = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-io = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-core = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-assets = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-balances = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-session = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-consensus-aura = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-io = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-core = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-pallet-parachain-system = { path = "../../../../pallets/parachain-system", default-features = false }
@@ -43,7 +43,7 @@ polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", 
 hex-literal = "0.3.4"
 
 [build-dependencies]
-substrate-wasm-builder = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
+substrate-wasm-builder = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 [features]
 default = [ "std" ]

@@ -20,19 +20,19 @@ pallet-bridge-messages = { path = "../messages", default-features = false }
 
 # Substrate Dependencies
 
-frame-benchmarking = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, optional = true , branch = "moonbeam-polkadot-v0.9.43" }
-frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-arithmetic = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
+frame-benchmarking = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, optional = true , branch = "grw/moon-1119-add-identity-specs" }
+frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+frame-system = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-arithmetic = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
 
 [dev-dependencies]
 bp-runtime = { path = "../../primitives/runtime" }
-pallet-balances = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
-sp-core = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
-sp-io = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
-sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
+pallet-balances = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
+sp-core = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
+sp-io = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
+sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 [features]
 default = ["std"]

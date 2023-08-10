@@ -11,9 +11,9 @@ scale-info = { version = "2.7.0", default-features = false, features = ["derive"
 log = { version = "0.4.17", default-features = false }
 
 # Substrate
-frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-api = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-api = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
 pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
@@ -26,7 +26,7 @@ parachains-common = { path = "../../../common", default-features = false }
 cumulus-primitives-core = { path = "../../../../primitives/core", default-features = false }
 
 [build-dependencies]
-substrate-wasm-builder = { git = "https://github.com/moonbeam-foundation/substrate", branch = "moonbeam-polkadot-v0.9.43" }
+substrate-wasm-builder = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 [features]
 default = [ "std" ]

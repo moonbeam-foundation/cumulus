@@ -13,12 +13,12 @@ bp-runtime = { path = "../runtime", default-features = false }
 codec = { package = "parity-scale-codec", version = "3.1.5", default-features = false }
 ed25519-dalek = { version = "1.0", default-features = false, features = ["u64_backend"] }
 finality-grandpa = { version = "0.16.2", default-features = false }
-sp-application-crypto = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-consensus-grandpa = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-core = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-trie = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
+sp-application-crypto = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-consensus-grandpa = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-core = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-trie = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
 
 [features]
 default = ["std"]
