@@ -16,9 +16,9 @@ bp-messages = { path = "../../primitives/messages", default-features = false }
 
 # Substrate Based Dependencies
 
-frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-api = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
-sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "moonbeam-polkadot-v0.9.43" }
+frame-support = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-api = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
+sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false , branch = "grw/moon-1119-add-identity-specs" }
 
 [features]
 default = ["std"]
