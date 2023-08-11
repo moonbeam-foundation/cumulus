@@ -5,7 +5,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 cumulus-primitives-core = { path = "../../primitives/core" }
 

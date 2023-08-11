@@ -40,6 +40,6 @@ cumulus-primitives-parachain-inherent = { path = "../../../primitives/parachain-
 cumulus-client-collator = { path = "../../collator" }
 
 # Polkadot
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-node-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-node-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }

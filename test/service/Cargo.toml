@@ -49,12 +49,12 @@ substrate-test-client = { git = "https://github.com/moonbeam-foundation/substrat
 sc-cli = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-test-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-node-subsystem = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-test-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-node-subsystem = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-client-cli = { path = "../../client/cli" }
@@ -76,7 +76,7 @@ futures = "0.3.28"
 portpicker = "0.1.1"
 
 # Polkadot dependencies
-polkadot-test-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-test-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Substrate dependencies
 sc-cli = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }

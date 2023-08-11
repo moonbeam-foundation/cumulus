@@ -50,14 +50,14 @@ sp-transaction-pool = { git = "https://github.com/moonbeam-foundation/substrate"
 sp-version = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-core-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-runtime-common = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-runtime-constants = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-xcm-builder = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-xcm-executor = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+polkadot-core-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+polkadot-runtime-common = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+polkadot-runtime-constants = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+xcm-builder = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+xcm-executor = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-pallet-aura-ext = { path = "../../../../pallets/aura-ext", default-features = false }

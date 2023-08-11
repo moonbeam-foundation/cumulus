@@ -32,11 +32,11 @@ parachain-info = { path = "../../../../parachains/pallets/parachain-info", defau
 parachains-runtimes-test-utils = { path = "../../test-utils", default-features = false }
 
 # Polkadot
-pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-xcm-benchmarks = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, optional = true , branch = "moonbeam-polkadot-v0.9.43" }
-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-xcm-builder = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-xcm-executor = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-xcm-benchmarks = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, optional = true , branch = "grw/moon-1119-add-identity-specs" }
+xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+xcm-builder = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+xcm-executor = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Bridges
 bp-bridge-hub-rococo = { path = "../../../../bridges/primitives/chain-bridge-hub-rococo", default-features = false }

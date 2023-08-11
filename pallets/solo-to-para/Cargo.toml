@@ -17,7 +17,7 @@ sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", default
 sp-std = { git = "https://github.com/moonbeam-foundation/substrate", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-pallet-parachain-system = { default-features = false, path = "../parachain-system" }

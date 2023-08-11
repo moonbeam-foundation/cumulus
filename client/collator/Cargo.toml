@@ -18,10 +18,10 @@ sp-core = { git = "https://github.com/moonbeam-foundation/substrate", branch = "
 sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-node-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-node-subsystem = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-node-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-node-subsystem = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-overseer = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-client-consensus-common = { path = "../consensus/common" }
@@ -37,7 +37,7 @@ sp-state-machine = { git = "https://github.com/moonbeam-foundation/substrate", b
 sp-tracing = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-node-subsystem-test-helpers = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-node-subsystem-test-helpers = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-test-client = { path = "../../test/client" }

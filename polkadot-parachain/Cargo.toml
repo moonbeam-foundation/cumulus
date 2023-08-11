@@ -74,10 +74,10 @@ pallet-transaction-payment-rpc = { git = "https://github.com/moonbeam-foundation
 substrate-state-trie-migration-rpc = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-service = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+xcm = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-client-cli = { path = "../client/cli" }
@@ -100,7 +100,7 @@ tempfile = "3.5.0"
 tokio = { version = "1.28.1", features = ["macros", "time", "parking_lot"] }
 wait-timeout = "0.2"
 # purge_chain_works works with rococo-local and needs to allow this
-polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", features = ["rococo-native"] , branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", features = ["rococo-native"] , branch = "grw/moon-1119-add-identity-specs" }
 
 [features]
 default = []

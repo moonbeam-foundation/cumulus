@@ -52,9 +52,9 @@ substrate-prometheus-endpoint = { git = "https://github.com/moonbeam-foundation/
 try-runtime-cli = { git = "https://github.com/moonbeam-foundation/substrate", optional = true , branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", features = ["rococo-native"] , branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-cli = { git = "https://github.com/moonbeam-foundation/polkadot", features = ["rococo-native"] , branch = "grw/moon-1119-add-identity-specs" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-client-cli = { path = "../../client/cli" }

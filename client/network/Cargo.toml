@@ -22,9 +22,9 @@ sp-runtime = { git = "https://github.com/moonbeam-foundation/substrate", branch 
 sp-state-machine = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-node-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-node-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-primitives = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-relay-chain-interface = { path = "../relay-chain-interface" }
@@ -44,8 +44,8 @@ sp-keystore = { git = "https://github.com/moonbeam-foundation/substrate", branch
 substrate-test-utils = { git = "https://github.com/moonbeam-foundation/substrate", branch = "grw/moon-1119-add-identity-specs" }
 
 # Polkadot
-polkadot-client = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-test-client = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "moonbeam-polkadot-v0.9.43" }
+polkadot-client = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
+polkadot-test-client = { git = "https://github.com/moonbeam-foundation/polkadot", branch = "grw/moon-1119-add-identity-specs" }
 
 # Cumulus
 cumulus-primitives-core = { path = "../../primitives/core" }

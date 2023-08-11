@@ -33,10 +33,10 @@ cumulus-test-relay-sproof-builder = { path = "../../../test/relay-sproof-builder
 parachain-info = { path = "../../../parachains/pallets/parachain-info", default-features = false }
 
 # Polkadot
-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-xcm-executor = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
-polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "moonbeam-polkadot-v0.9.43" }
+xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+xcm-executor = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+pallet-xcm = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
+polkadot-parachain = { git = "https://github.com/moonbeam-foundation/polkadot", default-features = false, branch = "grw/moon-1119-add-identity-specs" }
 
 [dev-dependencies]
 hex-literal = "0.3.4"
