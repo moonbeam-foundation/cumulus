@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["RelayChainRPCInterface","RelayChainRPCInterface is used to interact with a full node that is running locally in the same process."],["Url","A parsed URL record."]]});
+window.SIDEBAR_ITEMS = {"fn":["create_client_and_start_light_client_worker","create_client_and_start_worker"],"struct":["RelayChainRpcClient","RelayChainRpcInterface","Url"]};

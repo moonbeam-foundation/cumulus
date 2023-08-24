@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["cumulus_test_runtime"] = [{"text":"impl <a class=\"trait\" href=\"cumulus_test_runtime/trait.BuildStorage.html\" title=\"trait cumulus_test_runtime::BuildStorage\">BuildStorage</a> for <a class=\"struct\" href=\"cumulus_test_runtime/struct.GenesisConfig.html\" title=\"struct cumulus_test_runtime::GenesisConfig\">GenesisConfig</a>","synthetic":false,"types":["cumulus_test_runtime::GenesisConfig"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

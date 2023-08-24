@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["cumulus_test_client"] = [{"text":"impl <a class=\"trait\" href=\"cumulus_test_client/sc_executor/trait.NativeExecutionDispatch.html\" title=\"trait cumulus_test_client::sc_executor::NativeExecutionDispatch\">NativeExecutionDispatch</a> for <a class=\"struct\" href=\"cumulus_test_client/struct.LocalExecutor.html\" title=\"struct cumulus_test_client::LocalExecutor\">LocalExecutor</a>","synthetic":false,"types":["cumulus_test_client::local_executor::LocalExecutor"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

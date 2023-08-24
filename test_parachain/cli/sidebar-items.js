@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Commands",""]],"struct":[["ExportGenesisStateCommand",""],["ExportGenesisWasmCommand","Command for exporting the genesis wasm file."],["RelayChainCli",""],["TestCollatorCli",""]]});
+window.SIDEBAR_ITEMS = {"enum":["Subcommand"],"struct":["ExportGenesisStateCommand","ExportGenesisWasmCommand","RelayChainCli","TestCollatorCli"]};

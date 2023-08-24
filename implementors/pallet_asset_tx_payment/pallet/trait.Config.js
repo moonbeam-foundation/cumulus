@@ -1,5 +1,4 @@
-(function() {var implementors = {};
-implementors["statemine_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"statemine_runtime/struct.Runtime.html\" title=\"struct statemine_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["statemine_runtime::Runtime"]}];
-implementors["statemint_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"statemint_runtime/struct.Runtime.html\" title=\"struct statemint_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["statemint_runtime::Runtime"]}];
-implementors["westmint_runtime"] = [{"text":"impl Config for <a class=\"struct\" href=\"westmint_runtime/struct.Runtime.html\" title=\"struct westmint_runtime::Runtime\">Runtime</a>","synthetic":false,"types":["westmint_runtime::Runtime"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
+(function() {var implementors = {
+"asset_hub_polkadot_runtime":[["impl Config for <a class=\"struct\" href=\"asset_hub_polkadot_runtime/struct.Runtime.html\" title=\"struct asset_hub_polkadot_runtime::Runtime\">Runtime</a>"]],
+"penpal_runtime":[["impl Config for <a class=\"struct\" href=\"penpal_runtime/struct.Runtime.html\" title=\"struct penpal_runtime::Runtime\">Runtime</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

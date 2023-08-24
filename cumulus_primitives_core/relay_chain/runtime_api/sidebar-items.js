@@ -1,1 +1,1 @@
-initSidebarItems({"trait":[["ParachainHost","The API for querying the state of parachains on-chain."]]});
+window.SIDEBAR_ITEMS = {"trait":["ParachainHost"]};

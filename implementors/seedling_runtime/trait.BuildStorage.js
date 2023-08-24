@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["seedling_runtime"] = [{"text":"impl <a class=\"trait\" href=\"seedling_runtime/trait.BuildStorage.html\" title=\"trait seedling_runtime::BuildStorage\">BuildStorage</a> for <a class=\"struct\" href=\"seedling_runtime/struct.GenesisConfig.html\" title=\"struct seedling_runtime::GenesisConfig\">GenesisConfig</a>","synthetic":false,"types":["seedling_runtime::GenesisConfig"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

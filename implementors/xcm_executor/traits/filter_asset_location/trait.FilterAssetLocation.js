@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["parachains_common"] = [{"text":"impl&lt;T:&nbsp;Get&lt;MultiLocation&gt;&gt; FilterAssetLocation for <a class=\"struct\" href=\"parachains_common/impls/struct.AssetsFrom.html\" title=\"struct parachains_common::impls::AssetsFrom\">AssetsFrom</a>&lt;T&gt;","synthetic":false,"types":["parachains_common::impls::AssetsFrom"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

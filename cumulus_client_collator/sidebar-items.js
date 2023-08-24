@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["start_collator","Start the collator."]],"struct":[["Collator","The implementation of the Cumulus `Collator`."],["StartCollatorParams","Parameters for [`start_collator`]."]]});
+window.SIDEBAR_ITEMS = {"fn":["initialize_collator_subsystems","start_collator","start_collator_sync"],"mod":["relay_chain_driven","service"],"struct":["Collator","StartCollatorParams"]};

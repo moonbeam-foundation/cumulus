@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["contracts_rococo_runtime"] = [{"text":"impl <a class=\"trait\" href=\"contracts_rococo_runtime/trait.BuildStorage.html\" title=\"trait contracts_rococo_runtime::BuildStorage\">BuildStorage</a> for <a class=\"struct\" href=\"contracts_rococo_runtime/struct.GenesisConfig.html\" title=\"struct contracts_rococo_runtime::GenesisConfig\">GenesisConfig</a>","synthetic":false,"types":["contracts_rococo_runtime::GenesisConfig"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

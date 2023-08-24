@@ -1,3 +1,0 @@
-(function() {var implementors = {};
-implementors["shell_runtime"] = [{"text":"impl <a class=\"trait\" href=\"shell_runtime/trait.BuildStorage.html\" title=\"trait shell_runtime::BuildStorage\">BuildStorage</a> for <a class=\"struct\" href=\"shell_runtime/struct.GenesisConfig.html\" title=\"struct shell_runtime::GenesisConfig\">GenesisConfig</a>","synthetic":false,"types":["shell_runtime::GenesisConfig"]}];
-if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
