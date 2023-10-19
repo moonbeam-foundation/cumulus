@@ -28,11 +28,11 @@ use polkadot_node_subsystem_util::metrics::prometheus::Registry;
 use polkadot_primitives::CollatorPair;
 
 use sc_authority_discovery::Service as AuthorityDiscoveryService;
-use sc_network::{Event, NetworkEventStream, NetworkService};
-use sc_service::{Configuration, TaskManager};
+use sc_network::{config::FullNetworkConfiguration, Event, NetworkEventStream, NetworkService};
+use sc_service::{config::PrometheusConfig, Configuration, TaskManager};
 use sp_runtime::{app_crypto::Pair, traits::Block as BlockT};
 
-use futures::StreamExt;
+use futures::{FutureExt, StreamExt};
 use std::sync::Arc;
 
 mod collator_overseer;
@@ -65,7 +65,7 @@ fn build_authority_discovery_service<Block: BlockT>(
 			..Default::default()
 		},
 		client,
-		network.clone(),
+		network,
 		Box::pin(dht_event_stream),
 		authority_discovery_role,
 		prometheus_registry.clone(),
@@ -124,12 +124,16 @@ async fn new_minimal_relay_chain(
 ) -> Result<NewMinimalNode, RelayChainError> {
 	let role = config.role.clone();
 
-	let task_manager = {
-		let registry = config.prometheus_config.as_ref().map(|cfg| &cfg.registry);
-		TaskManager::new(config.tokio_handle.clone(), registry)?
-	};
+	let prometheus_registry = config.prometheus_registry();
+	let task_manager = TaskManager::new(config.tokio_handle.clone(), prometheus_registry)?;
 
-	let prometheus_registry = config.prometheus_registry().cloned();
+	if let Some(PrometheusConfig { port, registry }) = config.prometheus_config.clone() {
+		task_manager.spawn_handle().spawn(
+			"prometheus-endpoint",
+			None,
+			substrate_prometheus_endpoint::init_prometheus(port, registry).map(drop),
+		);
+	}
 
 	let genesis_hash = relay_chain_rpc_client
 		.block_get_hash(Some(0))
@@ -163,17 +167,17 @@ async fn new_minimal_relay_chain(
 		relay_chain_rpc_client.clone(),
 		&config,
 		network.clone(),
-		prometheus_registry.clone(),
+		prometheus_registry.cloned(),
 	);
 
 	let overseer_args = CollatorOverseerGenArgs {
 		runtime_client: relay_chain_rpc_client.clone(),
-		network_service: network.clone(),
+		network_service: network,
 		sync_oracle,
 		authority_discovery_service,
 		collation_req_receiver,
 		available_data_req_receiver,
-		registry: prometheus_registry.as_ref(),
+		registry: prometheus_registry,
 		spawner: task_manager.spawn_handle(),
 		collator_pair,
 		req_protocol_names: request_protocol_names,
@@ -189,7 +193,7 @@ async fn new_minimal_relay_chain(
 
 	network_starter.start_network();
 
-	Ok(NewMinimalNode { task_manager, overseer_handle, network })
+	Ok(NewMinimalNode { task_manager, overseer_handle })
 }
 
 fn build_request_response_protocol_receivers(

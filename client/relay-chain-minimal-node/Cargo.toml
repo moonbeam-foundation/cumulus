@@ -20,6 +20,7 @@ sc-client-api = { git = "https://github.com/PureStake/substrate", branch = "moon
 sc-network = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }
 sc-network-common = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }
 sc-service = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }
+substrate-prometheus-endpoint = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }
 sc-tracing = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }
 sp-api = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }
 sp-blockchain = { git = "https://github.com/PureStake/substrate", branch = "moonbeam-polkadot-v0.9.40" }

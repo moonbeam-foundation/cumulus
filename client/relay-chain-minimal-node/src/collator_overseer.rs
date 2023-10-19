@@ -43,7 +43,7 @@ use polkadot_service::{
 use sc_authority_discovery::Service as AuthorityDiscoveryService;
 use sc_network::NetworkStateInfo;
 use sc_service::TaskManager;
-use sp_runtime::traits::Block as BlockT;
+use sc_utils::mpsc::tracing_unbounded;
 
 use cumulus_primitives_core::relay_chain::{Block, Hash as PHash};
 use cumulus_relay_chain_interface::RelayChainError;
@@ -202,8 +202,6 @@ pub struct NewMinimalNode {
 	pub task_manager: TaskManager,
 	/// Overseer handle to interact with subsystems
 	pub overseer_handle: Handle,
-	/// Network service
-	pub network: Arc<sc_network::NetworkService<Block, <Block as BlockT>::Hash>>,
 }
 
 /// Glues together the [`Overseer`] and `BlockchainEvents` by forwarding
