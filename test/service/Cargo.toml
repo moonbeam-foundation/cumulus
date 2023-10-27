@@ -80,7 +80,7 @@ cumulus-pallet-parachain-system = { path = "../../pallets/parachain-system", def
 pallet-timestamp = { git = "https://github.com/paritytech/substrate", branch = "master" }
 
 [dev-dependencies]
-futures = "0.3.28"
+futures = "0.3.29"
 portpicker = "0.1.1"
 rococo-parachain-runtime = { path = "../../parachains/runtimes/testing/rococo-parachain" }
 pallet-im-online = { git = "https://github.com/paritytech/substrate", branch = "master" }
