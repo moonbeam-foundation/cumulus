@@ -28,7 +28,7 @@ use polkadot_node_subsystem_util::metrics::prometheus::Registry;
 use polkadot_primitives::CollatorPair;
 
 use sc_authority_discovery::Service as AuthorityDiscoveryService;
-use sc_network::{config::FullNetworkConfiguration, Event, NetworkEventStream, NetworkService};
+use sc_network::{Event, NetworkEventStream, NetworkService};
 use sc_service::{config::PrometheusConfig, Configuration, TaskManager};
 use sp_runtime::{app_crypto::Pair, traits::Block as BlockT};
 
@@ -124,8 +124,8 @@ async fn new_minimal_relay_chain(
 ) -> Result<NewMinimalNode, RelayChainError> {
 	let role = config.role.clone();
 
-	let prometheus_registry = config.prometheus_registry();
-	let task_manager = TaskManager::new(config.tokio_handle.clone(), prometheus_registry)?;
+	let prometheus_registry = config.prometheus_registry().cloned();
+	let task_manager = TaskManager::new(config.tokio_handle.clone(), prometheus_registry.as_ref())?;
 
 	if let Some(PrometheusConfig { port, registry }) = config.prometheus_config.clone() {
 		task_manager.spawn_handle().spawn(
@@ -167,7 +167,7 @@ async fn new_minimal_relay_chain(
 		relay_chain_rpc_client.clone(),
 		&config,
 		network.clone(),
-		prometheus_registry.cloned(),
+		prometheus_registry.clone(),
 	);
 
 	let overseer_args = CollatorOverseerGenArgs {
@@ -177,7 +177,7 @@ async fn new_minimal_relay_chain(
 		authority_discovery_service,
 		collation_req_receiver,
 		available_data_req_receiver,
-		registry: prometheus_registry,
+		registry: prometheus_registry.as_ref(),
 		spawner: task_manager.spawn_handle(),
 		collator_pair,
 		req_protocol_names: request_protocol_names,
